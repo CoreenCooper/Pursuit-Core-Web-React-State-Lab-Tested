@@ -14,9 +14,11 @@ class ClickerGame extends React.Component {
 
   payTenBtn = () => {
     this.setState((prevState) => {
+        if (prevState.score < 10)
       return {
         increment: prevState.increment + 1,
         increase: prevState.increase + 1,
+        score: prevState.score - 10
       };
     });
   };
